@@ -1,0 +1,88 @@
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Contactez-nous</h2>
+      <hr />
+      <p>
+        Vous êtes un particulier, une entreprise ou une copropriété ?
+        Pour toute demande, laissez-nous un message et nous y répondrons avec plaisir.
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <h3>Adresse</h3>
+        <hr />
+        <div class="contact-item">
+          <p>La Chapelle sur Erdre,</p>
+          <p>44240, France</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <h3>Horaires</h3>
+        <hr />
+        <div class="contact-item">
+          <p>Lundi-Vendredi: 08:30 - 18:00</p>
+          <p>Samedi-Dimanche: Fermé</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <h3>Contact</h3>
+        <hr />
+        <div class="contact-item">
+          <p>Phone: 06 42 00 66 77</p>
+          <p>Email: contact&#64;jardica.net</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3>Nous laisser un message</h3>
+        <p>Pour toutes questions ou demandes de devis, remplissez ce formulaire</p>
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Name"
+                  required="required"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required="required"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea
+              name="message"
+              id="message"
+              class="form-control"
+              rows="4"
+              placeholder="Message"
+              required
+            ></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-custom btn-lg">
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
