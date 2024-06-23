@@ -1,0 +1,16 @@
+/* Navigation */
+$my-secondary: #698020;
+
+.navbar{
+  background-color: white;
+  .nav-link{
+    color: #6aaf08;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    .active{
+      color: $my_secondary;
+    }
+  }
+
+}

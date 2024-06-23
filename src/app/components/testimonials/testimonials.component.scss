@@ -1,0 +1,154 @@
+/* Testimonials Section */
+$my-secondary: #698020;
+//
+
+// #testimonials {
+//   background: #444 url('/assets/testimonials-bg.jpg') center center no-repeat fixed;
+//   background-size: cover;
+// }
+
+// #testimonials .overlay {
+//   padding: 120px 0;
+//   background: rgba(106, 175, 8, 0.85);
+// }
+
+// #testimonials h2 {
+//   color: #fff;
+// }
+
+// #testimonials hr {
+//   background: #698020;
+// }
+
+// #testimonial p {
+//   color: #fff;
+//   font-size: 16px;
+//   font-weight: 400;
+//   line-height: 32px;
+// }
+#testimonials {
+  background: #444 url('/assets/testimonials-bg.jpg') center center no-repeat fixed;
+  background-size: cover;
+}
+
+#testimonials .overlay {
+  padding: 120px 0;
+  background: rgba(106, 175, 8, 0.85);
+}
+
+#testimonials h2 {
+  color: #fff;
+}
+
+#testimonials hr {
+  background: #698020;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  height: 200px; /* Adjust height as needed */
+}
+
+.carousel-item {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #fff; /* Set text color to white */
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeIn 0.5s, slideIn 0.5s;
+}
+
+.carousel-item.previous {
+  animation: fadeOut 0.5s, slideOut 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-controls button {
+  background-color: #698020;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-controls button:hover {
+  background-color: #567017;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-dots span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-dots span.active,
+.carousel-dots span:hover {
+  background: #fff;
+}
+
