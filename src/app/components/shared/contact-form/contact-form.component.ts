@@ -16,6 +16,7 @@ import { PencilIconComponent } from '../icons/pencil-icon.component';
 import { PhoneIconComponent } from '../icons/phone-icon.component';
 import { UserIconComponent } from '../icons/user-icon.component';
 import { ListIconComponent } from "../icons/list-icon.component";
+import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 
 @Component({
     selector: 'app-contact-form',
@@ -33,7 +34,8 @@ import { ListIconComponent } from "../icons/list-icon.component";
         EnvelopeIconComponent,
         PencilIconComponent,
         mapMarkerAltIconComponent,
-        ListIconComponent
+        ListIconComponent,
+        ScrollRevealDirective
     ]
 })
 export class ContactFormComponent {
@@ -75,6 +77,7 @@ export class ContactFormComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      console.log(this.contactForm)
       this.contactService.sendContactEmail(this.contactForm.value).subscribe(
         (response) => {
           this.message = 'Votre message a été envoyé avec succès.';

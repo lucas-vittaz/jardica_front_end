@@ -13,13 +13,15 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
       class="fa-phone"
     ></fa-icon>
   `,
-  imports: [CommonModule,FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule],
   styles: [
     `
+      .fa-phone {
+        color: #6aaf08;
+      }
 
       .fa-phone-animated {
         animation: hithere 2s ease-in-out infinite;
-        color: green;
         padding: 10px;
         font-size: 24px;
         display: inline-block;

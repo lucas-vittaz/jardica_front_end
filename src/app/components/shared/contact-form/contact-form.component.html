@@ -1,4 +1,4 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" appScrollReveal class="reveal-top">
   <div class="row">
     <div class="col-md-6 mb-3">
       <div class="input-group">
@@ -117,19 +117,23 @@
     </div>
   </div>
 
-  <div class="mb-3">
-    <re-captcha (resolved)="onRecaptchaResolved($event)" siteKey="6LdbJvopAAAAADJd9rrzl3MjTtfyOvVn9W_tViRM"></re-captcha>
-    <div
-      *ngIf="contactForm.controls['recaptcha']?.invalid && (contactForm.controls['recaptcha']?.dirty || contactForm.controls['recaptcha']?.touched)"
-      class="text-danger"
-    >
-      <small *ngIf="contactForm.controls['recaptcha']?.errors?.['required']">Le CAPTCHA est requis.</small>
+  <div class="mb-3 d-flex justify-content-center">
+    <div>
+      <re-captcha (resolved)="onRecaptchaResolved($event)" siteKey="6LdbJvopAAAAADJd9rrzl3MjTtfyOvVn9W_tViRM"></re-captcha>
+      <div
+        *ngIf="contactForm.controls['recaptcha']?.invalid && (contactForm.controls['recaptcha']?.dirty || contactForm.controls['recaptcha']?.touched)"
+        class="text-danger"
+      >
+        <small *ngIf="contactForm.controls['recaptcha']?.errors?.['required']">Le CAPTCHA est requis.</small>
+      </div>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary w-100" [disabled]="contactForm.invalid">
-    ENVOYER
-  </button>
+  <div class="text-center">
+    <button type="submit" class="btn btn-custom btn-lg" [disabled]="contactForm.invalid">
+      Envoyer
+    </button>
+  </div>
 </form>
 
 <div *ngIf="message" [ngClass]="{ 'text-success': !isError, 'text-danger': isError }" class="mt-3">

@@ -1,11 +1,11 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CarouselModule, CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
 })

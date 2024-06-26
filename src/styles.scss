@@ -143,7 +143,6 @@ a:focus,
 
 // ajout lv
 
-
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
@@ -252,8 +251,57 @@ ol.type li a:hover {
   opacity: 1;
 }
 
-
-
 #footer .border {
   border-color: $my-secondary !important;
+}
+
+.reveal-top {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-bottom {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-top,
+.reveal-bottom,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-top.reveal-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.reveal-bottom.reveal-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.reveal-left.reveal-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.reveal-right.reveal-visible {
+  transform: translateX(0);
+  opacity: 1;
 }

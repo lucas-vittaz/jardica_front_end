@@ -10,6 +10,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   styles: [
     `
       .fa-user {
+        color: #6aaf08;
       }
     `,
   ],
