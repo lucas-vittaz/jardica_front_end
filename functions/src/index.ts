@@ -7,7 +7,7 @@ import * as nodemailer from 'nodemailer';
 import * as path from 'path';
 
 const app = express();
-app.use(cors({ origin: ['http://localhost:4200', 'https://www.jardica.net', ''] }));
+app.use(cors({ origin: ['http://localhost:4200', 'https://www.jardica.net', 'https://jardica-front-end.web.app'] }));
 
 // Configurez le transporteur Nodemailer
 const transporter = nodemailer.createTransport({
@@ -31,10 +31,13 @@ const jardicaTemplateSource = fs.readFileSync(
 );
 const jardicaTemplate = handlebars.compile(jardicaTemplateSource);
 
+// Servir les fichiers statiques (logo)
+// app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 const whitelist = [
   'http://localhost:4200',
   'https://www.jardica.net',
-  ''
+  'https://jardica-front-end.web.app'
 ];
 
 const corsOptions = {
@@ -56,22 +59,22 @@ export const sendContactEmail = functions
   .region('europe-west1')
   .https.onRequest((req, res) => {
     corsHandler(req, res, () => {
-      const { name,  firstName, interventionPlace, category, email, phone, message,  } = req.body;
+      const { name, firstName, category, interventionPlace, email, phone, message } = req.body;
 
       // Préparer l'email pour l'utilisateur
       const userEmailOptions = {
-        from: 'contact@jardica.net',
+        from: 'lucasvittaz.pro@gmail.com',
         to: email,
         subject: 'Confirmation de votre demande',
-        html: userTemplate({ name,  firstName, interventionPlace, category, email, phone, message, }),
+        html: userTemplate({ name, email, phone, message }),
       };
 
-      // Préparer l'email pour JARDICA
+      // Préparer l'email pour le restaurateur
       const jardicaEmailOptions = {
-        from: email,
-        to: 'contact@jardica.net',
-        subject: `[${category}] - Nouvelle demande de contact`,
-        html: jardicaTemplate({ name,  firstName, interventionPlace, category, email, phone, message, }),
+        from: 'lucasvittaz.pro@gmail.com',
+        to: 'lucasvittaz.pro@gmail.com',
+        subject: 'Nouvelle demande de contact',
+        html: jardicaTemplate({ name, firstName, category, interventionPlace, email, phone, message }),
       };
 
       // Envoyer les emails
@@ -82,10 +85,10 @@ export const sendContactEmail = functions
         .then(() => {
           return res
             .status(200)
-            .json({ message: 'Emails envoyés avec succès' });
+            .json({ message: 'Emails envoyés avec succès' }); // Utiliser JSON pour la réponse
         })
         .catch((error) => {
-          return res.status(500).json({ error: error.toString() });
+          return res.status(500).json({ error: error.toString() }); // Utiliser JSON pour la réponse en cas d'erreur
         });
     });
   });

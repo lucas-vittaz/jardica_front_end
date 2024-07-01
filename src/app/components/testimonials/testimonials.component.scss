@@ -4,6 +4,7 @@ $my-secondary: #698020;
 #testimonials {
   background: #444 url('/assets/testimonials-bg.jpg') center center no-repeat fixed;
   background-size: cover;
+  content-visibility: auto;
 }
 
 #testimonials .overlay {
@@ -16,7 +17,7 @@ $my-secondary: #698020;
 }
 
 #testimonials hr {
-  background: #698020;
+  background-color: white;
 }
 
 .carousel {

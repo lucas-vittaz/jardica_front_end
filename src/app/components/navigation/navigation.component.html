@@ -2,7 +2,13 @@
 <nav class="navbar navbar-expand-lg bg-body-white fixed-top z-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="./assets/logo.webp" alt="Jardi-ca" width="200" height="75" />
+      <img
+        src="./assets/logo.webp"
+        alt="Jardi-ca logo"
+        width="200"
+        height="80"
+        loading="lazy"
+      />
     </a>
     <button
       class="navbar-toggler"
@@ -18,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+          <a class="nav-link" aria-current="page" href="#home">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about">À propos</a>
@@ -34,7 +40,8 @@
         </li>
       </ul>
       <span class="navbar-text">
-        <app-phone-icon [isAnimated]="true"></app-phone-icon><a href="tel:0642006677" class="text-decoration-none">Appelez-nous</a>
+        <app-phone-icon [isAnimated]="true"></app-phone-icon
+        ><a href="tel:0642006677" class="text-decoration-none">Appelez-nous</a>
       </span>
     </div>
   </div>

@@ -1,5 +1,10 @@
-<google-map class="reveal-bottom" [center]="center" [zoom]="zoom" height="400px" width="100%" appScrollReveal>
-  <map-marker #marker="mapMarker" [position]="center" [title]="'Les Boisiers'" (mapClick)="openInfoWindow(marker)">
+<google-map [center]="center" [zoom]="zoom" height="400px" width="100%">
+  <map-marker
+    #marker="mapMarker"
+    [position]="center"
+    [title]="'Les Boisiers'"
+    (mapClick)="openInfoWindow(marker)"
+  >
   </map-marker>
   <map-info-window #infoWindow>
     <div [innerHTML]="infoContent"></div>

@@ -53,7 +53,7 @@
     <div class="col-md-6 mb-3">
       <div class="input-group">
         <span class="input-group-text"><app-list-icon></app-list-icon></span>
-        <select formControlName="category" class="form-control">
+        <select formControlName="category" class="form-control" aria-label="Catégorie">
           <option value="" disabled selected>Choisissez une catégorie</option>
           <option value="devis">Devis</option>
           <option value="renseignement">Renseignement</option>
@@ -119,7 +119,7 @@
 
   <div class="mb-3 d-flex justify-content-center">
     <div>
-      <re-captcha (resolved)="onRecaptchaResolved($event)" siteKey="6LdbJvopAAAAADJd9rrzl3MjTtfyOvVn9W_tViRM"></re-captcha>
+      <re-captcha (resolved)="onRecaptchaResolved($event)" siteKey="6LfPBwIqAAAAAGmIe9A2DKkf3zLKQHDgm2gWPmnD"></re-captcha>
       <div
         *ngIf="contactForm.controls['recaptcha']?.invalid && (contactForm.controls['recaptcha']?.dirty || contactForm.controls['recaptcha']?.touched)"
         class="text-danger"

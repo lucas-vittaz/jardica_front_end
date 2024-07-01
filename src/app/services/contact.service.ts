@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ContactService {
-  private sendEmailUrl = ' https://europe-west1-jardica-front-end.cloudfunctions.net/sendContactEmail';
+  private sendEmailUrl =
+    ' https://europe-west1-jardica-front-end.cloudfunctions.net/sendContactEmail';
 
   constructor(private http: HttpClient) {}
 

@@ -1,1 +1,14 @@
 $my-secondary: #698020;
+
+#footer {
+  h5{
+    color:#333;
+  }
+  border-top: 10px !important;
+  .border-top {
+    border-color: #6aaf08 !important;
+  }
+  .nav-link:hover {
+    color: #6aaf08 !important;
+  }
+}
